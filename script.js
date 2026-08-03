@@ -10,38 +10,53 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Una vez revelado, dejar de observar para no re-animar
         revealObserver.unobserve(entry.target);
       }
     });
   }, {
     root: null,
-    rootMargin: '0px 0px -60px 0px',
+    rootMargin: '0px 0px -50px 0px',
     threshold: 0.1
   });
 
   revealElements.forEach(el => revealObserver.observe(el));
 
   // ============================================
-  // NAVBAR SCROLL BEHAVIOR
+  // NAVBAR SCROLL & GLASS EFFECT
   // ============================================
   const navbar = document.getElementById('navbar');
-  let lastScrollY = 0;
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
 
   function handleScroll() {
     const scrollY = window.scrollY;
 
-    // Añadir/quitar clase scrolled para sombra y altura
-    if (scrollY > 50) {
+    // Navbar scrolled state
+    if (scrollY > 40) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
     }
 
-    lastScrollY = scrollY;
+    // Scroll Spy for active nav link
+    let currentSectionId = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      const sectionHeight = section.offsetHeight;
+      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+        currentSectionId = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSectionId}`) {
+        link.classList.add('active');
+      }
+    });
   }
 
-  // Throttle scroll events para performance
+  // Throttle scroll events for optimal performance
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
@@ -53,7 +68,6 @@
     }
   }, { passive: true });
 
-  // Llamar una vez al cargar
   handleScroll();
 
   // ============================================
@@ -78,42 +92,99 @@
     document.body.style.overflow = '';
   }
 
-  hamburger.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('open')) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+  if (hamburger) {
+    hamburger.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('open')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  }
+
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', closeMenu);
+  }
+
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 
-  mobileOverlay.addEventListener('click', closeMenu);
+  // ============================================
+  // LIGHTBOX MODAL DE GALERÍA
+  // ============================================
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const galleryItems = document.querySelectorAll('.gallery-item');
 
-  // Cerrar menú al hacer clic en un link
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      closeMenu();
+  function openLightbox(src, title) {
+    if (!lightbox || !lightboxImg) return;
+    lightboxImg.src = src;
+    lightboxCaption.textContent = title || 'Trabajo Lavanda Estudio';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      const title = item.getAttribute('data-title');
+      const src = item.getAttribute('data-src') || (img ? img.src : '');
+      
+      // If image failed to load, don't open modal or show placeholder title
+      if (img && img.style.display === 'none') {
+        const placeholderText = item.querySelector('.gallery-placeholder span');
+        openLightbox('./assets/logo-lavanda-transparente.png', placeholderText ? placeholderText.textContent : title);
+      } else if (src) {
+        openLightbox(src, title);
+      }
     });
   });
 
-  // Cerrar menú con tecla Escape
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // Tecla Escape para cerrar modales y menú
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-      closeMenu();
+    if (e.key === 'Escape') {
+      if (mobileMenu && mobileMenu.classList.contains('open')) {
+        closeMenu();
+      }
+      if (lightbox && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
     }
   });
 
   // ============================================
-  // SMOOTH SCROLL para links de navegación
+  // SMOOTH SCROLL CON OFFSET DE NAVBAR
   // ============================================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
-      if (href === '#') return; // Ignorar links vacíos
+      if (href === '#' || href === '') return;
 
       e.preventDefault();
       const target = document.querySelector(href);
       if (target) {
-        const navHeight = navbar.offsetHeight;
+        const navHeight = navbar ? navbar.offsetHeight : 80;
         const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
 
         window.scrollTo({

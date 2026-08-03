@@ -9,7 +9,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -27,15 +27,21 @@
        ============================================ -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="#inicio">
+      <a href="#inicio" class="logo-link">
         <img src="./assets/logo-lavanda-transparente.png" alt="Lavanda Estudio" class="logo" />
       </a>
       <div class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#galeria">Galería</a>
-        <a href="#precios">Precios</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#inicio" class="nav-link active">Inicio</a>
+        <a href="#sobre" class="nav-link">Sobre Lavanda</a>
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#galeria" class="nav-link">Galería</a>
+        <a href="#precios" class="nav-link">Precios</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </div>
+      <div class="nav-cta-desktop">
+        <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="btn btn-nav">
+          <i class="fab fa-whatsapp"></i> Reservar
+        </a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Menú">
         <span></span>
@@ -50,17 +56,30 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-header">
+      <img src="./assets/logo-lavanda-transparente.png" alt="Lavanda Estudio" class="mobile-menu-logo" />
+    </div>
     <a href="#inicio" class="mobile-link">Inicio</a>
+    <a href="#sobre" class="mobile-link">Sobre Lavanda</a>
     <a href="#servicios" class="mobile-link">Servicios</a>
     <a href="#galeria" class="mobile-link">Galería</a>
     <a href="#precios" class="mobile-link">Precios</a>
     <a href="#contacto" class="mobile-link">Contacto</a>
+    <div class="mobile-menu-footer">
+      <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">
+        <i class="fab fa-whatsapp"></i> Agendar por WhatsApp
+      </a>
+    </div>
   </div>
 
   <!-- ============================================
        HERO
        ============================================ -->
   <section class="hero" id="inicio">
+    <!-- Fondos de brillo ambiental -->
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+
     <!-- Patrón SVG decorativo -->
     <svg class="hero-pattern" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <defs>
@@ -74,17 +93,37 @@
     </svg>
 
     <div class="container">
-      <div class="reveal">
+      <div class="reveal hero-card">
+        <div class="hero-badge">
+          <i class="fas fa-sparkles"></i> Tu oasis de belleza y bienestar
+        </div>
         <img src="./assets/logo-lavanda-transparente.png" alt="Lavanda Estudio" class="hero-logo" />
-        <h1>Tu belleza, con el toque de Lavanda</h1>
-        <p>Especialistas en manicura y pedicura — Cuidamos cada detalle de ti</p>
+        <h1>Tu belleza, con el <span class="accent-text">toque de Lavanda</span></h1>
+        <p>Especialistas en manicura y pedicura de alta calidad. Cuidamos cada detalle de tus manos y pies en un ambiente exclusivo.</p>
+        
         <div class="hero-buttons">
-          <a href="#contacto" class="btn btn-primary">
+          <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <i class="fab fa-whatsapp"></i> Reservar cita
           </a>
           <a href="#servicios" class="btn btn-secondary">
-            Ver servicios
+            Ver servicios <i class="fas fa-arrow-right"></i>
           </a>
+        </div>
+
+        <!-- Características destacadas (Trust Bar) -->
+        <div class="hero-features">
+          <div class="hero-feature-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Atención Personalizada</span>
+          </div>
+          <div class="hero-feature-item">
+            <i class="fas fa-heart"></i>
+            <span>Diseños Exclusivos</span>
+          </div>
+          <div class="hero-feature-item">
+            <i class="fas fa-gem"></i>
+            <span>Productos Premium</span>
+          </div>
         </div>
       </div>
     </div>
@@ -93,25 +132,20 @@
   <!-- Separador floral -->
   <div class="lavender-divider reveal">
     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <g stroke="#9B59B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4">
-        <!-- Tallo central -->
+      <g stroke="#9B59B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
         <path d="M32 52 L32 28" />
-        <!-- Ramita izquierda -->
         <path d="M32 40 L24 34" />
         <path d="M32 36 L26 30" />
         <path d="M32 32 L24 26" />
-        <!-- Ramita derecha -->
         <path d="M32 42 L40 36" />
         <path d="M32 38 L38 32" />
         <path d="M32 34 L40 28" />
-        <!-- Flores -->
         <ellipse cx="24" cy="34" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
         <ellipse cx="26" cy="30" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
         <ellipse cx="24" cy="26" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
         <ellipse cx="40" cy="36" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
         <ellipse cx="38" cy="32" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
         <ellipse cx="40" cy="28" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
-        <!-- Copa superior -->
         <ellipse cx="32" cy="24" rx="3.5" ry="6" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
         <ellipse cx="28" cy="22" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
         <ellipse cx="36" cy="22" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
@@ -128,13 +162,39 @@
         <div class="about-image reveal">
           <img src="./assets/about.jpg" alt="El espacio de Lavanda Estudio" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
           <div class="about-image-placeholder" style="display:none;">
-            <span>[Foto del espacio o la dueña]</span>
+            <div class="placeholder-content">
+              <i class="fas fa-spa placeholder-icon"></i>
+              <span>Espacio Lavanda Estudio</span>
+              <p>Un ambiente diseñado para tu comodidad y relax</p>
+            </div>
+          </div>
+          <div class="about-experience-badge">
+            <span class="badge-number">100%</span>
+            <span class="badge-text">Dedicación &amp; Estilo</span>
           </div>
         </div>
         <div class="about-content reveal">
           <span class="gold-accent"></span>
           <h2>Sobre Lavanda</h2>
-          <p>En Lavanda Estudio creemos que cuidarte es un acto de amor propio. Nació de la pasión por la belleza y el bienestar, con la visión de crear un espacio donde cada mujer se sienta especial.</p>
+          <p class="lead-text">En Lavanda Estudio creemos que cuidarte es un acto de amor propio.</p>
+          <p>Nació de la pasión por la belleza, el detalle y el bienestar, con la visión de crear un espacio donde cada persona se sienta única, consentida y atendida con los estándares más altos de calidad e higiene.</p>
+
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-pump-soap"></i></div>
+              <div>
+                <h4>Higiene Garatizada</h4>
+                <p>Herramientas esterilizadas y protocolos bioseguros.</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fas fa-paint-brush"></i></div>
+              <div>
+                <h4>Nail Art Personalizado</h4>
+                <p>Realizamos tus ideas con técnicas modernas y duraderas.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -145,24 +205,54 @@
        ============================================ -->
   <section class="services section" id="servicios">
     <div class="container">
-      <h2 class="section-title reveal">Nuestros Servicios</h2>
-      <p class="section-subtitle reveal">Lo que ya disfrutas en Lavanda</p>
+      <div class="section-header text-center">
+        <span class="section-subtitle reveal">Lo que disfrutaste hoy</span>
+        <h2 class="section-title reveal">Nuestros Servicios Principales</h2>
+      </div>
 
       <div class="services-grid">
         <!-- Manicura -->
         <div class="service-card reveal">
-          <div class="service-icon">💅</div>
-          <h3>Manicura</h3>
-          <p>Esmaltado, nail art, semipermanente y más. Manos perfectas que hablan por ti.</p>
-          <span class="badge badge-available">Disponible Ahora</span>
+          <div class="service-card-header">
+            <div class="service-icon-box lavender-glow">
+              <i class="fas fa-hand-sparkles"></i>
+            </div>
+            <span class="badge badge-available"><i class="fas fa-check"></i> Disponible Ahora</span>
+          </div>
+          <h3>Manicura Profesional</h3>
+          <p>Esmaltado tradicional, semipermanente, nail art detallado, nivelación con base rubber y cuidado integral de uñas y cutículas.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Limpieza y preparación de uñas</li>
+            <li><i class="fas fa-check"></i> Exfoliación e hidratación</li>
+            <li><i class="fas fa-check"></i> Diseños personalizados &amp; Nail Art</li>
+          </ul>
+          <div class="service-card-footer">
+            <a href="https://wa.me/584148804780?text=Hola,%20quisiera%20agendar%20un%20servicio%20de%20Manicura" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+              <i class="fab fa-whatsapp"></i> Reservar Manicura
+            </a>
+          </div>
         </div>
 
         <!-- Pedicura -->
         <div class="service-card reveal">
-          <div class="service-icon">🦶</div>
-          <h3>Pedicura</h3>
-          <p>Tratamiento completo para tus pies. Exfoliación, hidratación y esmaltado perfecto.</p>
-          <span class="badge badge-available">Disponible Ahora</span>
+          <div class="service-card-header">
+            <div class="service-icon-box gold-glow">
+              <i class="fas fa-shoe-prints"></i>
+            </div>
+            <span class="badge badge-available"><i class="fas fa-check"></i> Disponible Ahora</span>
+          </div>
+          <h3>Pedicura Spa &amp; Estética</h3>
+          <p>Tratamiento reparador y relajante para tus pies. Exfoliación profunda, baño relajante, masajes hidratantes y esmaltado de alta duración.</p>
+          <ul class="service-list">
+            <li><i class="fas fa-check"></i> Baño de pies herbal y exfoliante</li>
+            <li><i class="fas fa-check"></i> Retiro de durezas y tratamiento hidratante</li>
+            <li><i class="fas fa-check"></i> Esmaltado tradicional o semipermanente</li>
+          </ul>
+          <div class="service-card-footer">
+            <a href="https://wa.me/584148804780?text=Hola,%20quisiera%20agendar%20un%20servicio%20de%20Pedicura" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
+              <i class="fab fa-whatsapp"></i> Reservar Pedicura
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -171,7 +261,7 @@
   <!-- Separador floral -->
   <div class="lavender-divider reveal">
     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <g stroke="#9B59B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4">
+      <g stroke="#9B59B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
         <path d="M32 52 L32 28" />
         <path d="M32 40 L24 34" />
         <path d="M32 36 L26 30" />
@@ -197,29 +287,39 @@
        ============================================ -->
   <section class="coming-soon section">
     <div class="container">
-      <h2 class="section-title reveal">Próximamente en Lavanda</h2>
-      <p class="section-subtitle reveal">Muy pronto para ti</p>
+      <div class="section-header text-center">
+        <span class="section-subtitle reveal">Creciendo para ti</span>
+        <h2 class="section-title reveal">Próximamente en Lavanda</h2>
+      </div>
 
       <div class="coming-soon-grid">
         <div class="coming-soon-card reveal">
-          <div class="service-icon">✂️</div>
-          <h4>Peluquería</h4>
-          <span class="badge badge-soon">Próximamente</span>
+          <div class="service-icon-box soon-icon">
+            <i class="fas fa-scissors"></i>
+          </div>
+          <h4>Peluquería &amp; Estilo</h4>
+          <span class="badge badge-soon"><i class="fas fa-clock"></i> Próximamente</span>
         </div>
         <div class="coming-soon-card reveal">
-          <div class="service-icon">💄</div>
-          <h4>Maquillaje</h4>
-          <span class="badge badge-soon">Próximamente</span>
+          <div class="service-icon-box soon-icon">
+            <i class="fas fa-wand-magic-sparkles"></i>
+          </div>
+          <h4>Maquillaje Social</h4>
+          <span class="badge badge-soon"><i class="fas fa-clock"></i> Próximamente</span>
         </div>
         <div class="coming-soon-card reveal">
-          <div class="service-icon">🌸</div>
-          <h4>Depilación</h4>
-          <span class="badge badge-soon">Próximamente</span>
+          <div class="service-icon-box soon-icon">
+            <i class="fas fa-feather-pointed"></i>
+          </div>
+          <h4>Depilación &amp; Cejas</h4>
+          <span class="badge badge-soon"><i class="fas fa-clock"></i> Próximamente</span>
         </div>
         <div class="coming-soon-card reveal">
-          <div class="service-icon">🧖‍♀️</div>
+          <div class="service-icon-box soon-icon">
+            <i class="fas fa-hot-tub-person"></i>
+          </div>
           <h4>Spa &amp; Bienestar</h4>
-          <span class="badge badge-soon">Próximamente</span>
+          <span class="badge badge-soon"><i class="fas fa-clock"></i> Próximamente</span>
         </div>
       </div>
     </div>
@@ -230,52 +330,111 @@
        ============================================ -->
   <section class="gallery section" id="galeria">
     <div class="container">
-      <h2 class="section-title reveal">Nuestro Trabajo</h2>
-      <p class="section-subtitle reveal">Cada detalle, con amor</p>
+      <div class="section-header text-center">
+        <span class="section-subtitle reveal">Galeria de Arte</span>
+        <h2 class="section-title reveal">Nuestro Trabajo</h2>
+        <p class="section-desc reveal">Cada acabado es reflejo de dedicación, pasión y técnica perfecta.</p>
+      </div>
 
       <div class="gallery-grid">
-        <div class="gallery-item reveal">
-          <img src="./assets/gallery/foto-1.jpg" alt="Trabajo 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="gallery-placeholder" style="display:none;">[Foto del trabajo]</div>
-          <div class="gallery-overlay"><i class="fas fa-eye"></i></div>
+        <div class="gallery-item reveal" data-src="./assets/gallery/foto-1.jpg" data-title="Manicura Semipermanente con Nail Art">
+          <img src="./assets/gallery/foto-1.jpg" alt="Manicura Lavanda 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder" style="display:none;">
+            <i class="fas fa-camera placeholder-icon"></i>
+            <span>Nail Art Elegante</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="overlay-info">
+              <i class="fas fa-expand-alt"></i>
+              <span>Ver Foto</span>
+            </div>
+          </div>
         </div>
-        <div class="gallery-item reveal">
-          <img src="./assets/gallery/foto-2.jpg" alt="Trabajo 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="gallery-placeholder" style="display:none;">[Foto del trabajo]</div>
-          <div class="gallery-overlay"><i class="fas fa-eye"></i></div>
+
+        <div class="gallery-item reveal" data-src="./assets/gallery/foto-2.jpg" data-title="Pedicura Spa Completa">
+          <img src="./assets/gallery/foto-2.jpg" alt="Pedicura Lavanda 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder" style="display:none;">
+            <i class="fas fa-camera placeholder-icon"></i>
+            <span>Pedicura Spa</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="overlay-info">
+              <i class="fas fa-expand-alt"></i>
+              <span>Ver Foto</span>
+            </div>
+          </div>
         </div>
-        <div class="gallery-item reveal">
-          <img src="./assets/gallery/foto-3.jpg" alt="Trabajo 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="gallery-placeholder" style="display:none;">[Foto del trabajo]</div>
-          <div class="gallery-overlay"><i class="fas fa-eye"></i></div>
+
+        <div class="gallery-item reveal" data-src="./assets/gallery/foto-3.jpg" data-title="Manicura Rusa & Base Rubber">
+          <img src="./assets/gallery/foto-3.jpg" alt="Manicura Lavanda 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder" style="display:none;">
+            <i class="fas fa-camera placeholder-icon"></i>
+            <span>Esmaltado Fino</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="overlay-info">
+              <i class="fas fa-expand-alt"></i>
+              <span>Ver Foto</span>
+            </div>
+          </div>
         </div>
-        <div class="gallery-item reveal">
-          <img src="./assets/gallery/foto-4.jpg" alt="Trabajo 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="gallery-placeholder" style="display:none;">[Foto del trabajo]</div>
-          <div class="gallery-overlay"><i class="fas fa-eye"></i></div>
+
+        <div class="gallery-item reveal" data-src="./assets/gallery/foto-4.jpg" data-title="Diseño Minimalista Gold">
+          <img src="./assets/gallery/foto-4.jpg" alt="Manicura Lavanda 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder" style="display:none;">
+            <i class="fas fa-camera placeholder-icon"></i>
+            <span>Diseño Floral</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="overlay-info">
+              <i class="fas fa-expand-alt"></i>
+              <span>Ver Foto</span>
+            </div>
+          </div>
         </div>
-        <div class="gallery-item reveal">
-          <img src="./assets/gallery/foto-5.jpg" alt="Trabajo 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="gallery-placeholder" style="display:none;">[Foto del trabajo]</div>
-          <div class="gallery-overlay"><i class="fas fa-eye"></i></div>
+
+        <div class="gallery-item reveal" data-src="./assets/gallery/foto-5.jpg" data-title="Tratamiento Hidratante de Pies">
+          <img src="./assets/gallery/foto-5.jpg" alt="Trabajo Lavanda 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder" style="display:none;">
+            <i class="fas fa-camera placeholder-icon"></i>
+            <span>Cuidado de Pies</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="overlay-info">
+              <i class="fas fa-expand-alt"></i>
+              <span>Ver Foto</span>
+            </div>
+          </div>
         </div>
-        <div class="gallery-item reveal">
-          <img src="./assets/gallery/foto-6.jpg" alt="Trabajo 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="gallery-placeholder" style="display:none;">[Foto del trabajo]</div>
-          <div class="gallery-overlay"><i class="fas fa-eye"></i></div>
+
+        <div class="gallery-item reveal" data-src="./assets/gallery/foto-6.jpg" data-title="Manicura Francesa Estilizada">
+          <img src="./assets/gallery/foto-6.jpg" alt="Trabajo Lavanda 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="gallery-placeholder" style="display:none;">
+            <i class="fas fa-camera placeholder-icon"></i>
+            <span>Francesa Moderna</span>
+          </div>
+          <div class="gallery-overlay">
+            <div class="overlay-info">
+              <i class="fas fa-expand-alt"></i>
+              <span>Ver Foto</span>
+            </div>
+          </div>
         </div>
       </div>
 
-      <p class="gallery-footer reveal">
-        Síguenos en <a href="#" onclick="event.preventDefault(); alert('Próximamente');">Instagram</a> para ver más trabajos
-      </p>
+      <div class="gallery-footer reveal">
+        <p>¿Quieres ver más estilos y tendencias?</p>
+        <a href="https://wa.me/584148804780?text=Hola,%20me%20gustaria%20ver%20mas%20fotos%20de%20sus%20trabajos" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+          <i class="fab fa-whatsapp"></i> Solicitar catálogo por WhatsApp
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Separador floral -->
   <div class="lavender-divider reveal">
     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <g stroke="#9B59B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.4">
+      <g stroke="#9B59B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
         <path d="M32 52 L32 28" />
         <path d="M32 40 L24 34" />
         <path d="M32 36 L26 30" />
@@ -301,50 +460,89 @@
        ============================================ -->
   <section class="prices section" id="precios">
     <div class="container">
-      <h2 class="section-title reveal">Nuestros Precios</h2>
-      <p class="section-subtitle reveal">Calidad al alcance</p>
+      <div class="section-header text-center">
+        <span class="section-subtitle reveal">Menú de servicios</span>
+        <h2 class="section-title reveal">Precios &amp; Carta</h2>
+        <p class="section-desc reveal">Tarifas transparentes con productos de primera categoría.</p>
+      </div>
 
       <div class="prices-container">
         <!-- Manicura -->
         <div class="price-table reveal">
-          <div class="price-table-header">Manicura</div>
-          <div class="price-row">
-            <span class="price-name">Esmaltado tradicional</span>
-            <span class="price-value">[PRECIO]</span>
+          <div class="price-table-header">
+            <div class="price-table-title">
+              <i class="fas fa-hand-sparkles"></i> Manicura
+            </div>
+            <span class="price-category-tag">Manos</span>
           </div>
-          <div class="price-row">
-            <span class="price-name">Semipermanente</span>
-            <span class="price-value">[PRECIO]</span>
-          </div>
-          <div class="price-row">
-            <span class="price-name">Nail art sencillo</span>
-            <span class="price-value">[PRECIO]</span>
-          </div>
-          <div class="price-row">
-            <span class="price-name">Nail art elaborado</span>
-            <span class="price-value">[PRECIO]</span>
+          <div class="price-rows-wrapper">
+            <div class="price-row">
+              <span class="price-name">Esmaltado tradicional</span>
+              <span class="price-dots"></span>
+              <span class="price-value">Consultar</span>
+            </div>
+            <div class="price-row">
+              <span class="price-name">Semipermanente</span>
+              <span class="price-dots"></span>
+              <span class="price-value">Consultar</span>
+            </div>
+            <div class="price-row">
+              <span class="price-name">Nail art sencillo (por uña)</span>
+              <span class="price-dots"></span>
+              <span class="price-value">Consultar</span>
+            </div>
+            <div class="price-row">
+              <span class="price-name">Nail art elaborado / Efecto Rubí</span>
+              <span class="price-dots"></span>
+              <span class="price-value">Consultar</span>
+            </div>
+            <div class="price-row">
+              <span class="price-name">Nivelación / Rubber Base</span>
+              <span class="price-dots"></span>
+              <span class="price-value">Consultar</span>
+            </div>
           </div>
         </div>
 
         <!-- Pedicura -->
         <div class="price-table reveal">
-          <div class="price-table-header">Pedicura</div>
-          <div class="price-row">
-            <span class="price-name">Pedicura básica</span>
-            <span class="price-value">[PRECIO]</span>
+          <div class="price-table-header gold-table-header">
+            <div class="price-table-title">
+              <i class="fas fa-shoe-prints"></i> Pedicura
+            </div>
+            <span class="price-category-tag">Pies</span>
           </div>
-          <div class="price-row">
-            <span class="price-name">Pedicura completa + esmaltado</span>
-            <span class="price-value">[PRECIO]</span>
-          </div>
-          <div class="price-row">
-            <span class="price-name">Semipermanente pies</span>
-            <span class="price-value">[PRECIO]</span>
+          <div class="price-rows-wrapper">
+            <div class="price-row">
+              <span class="price-name">Pedicura estética básica</span>
+              <span class="price-dots"></span>
+              <span class="price-value">Consultar</span>
+            </div>
+            <div class="price-row">
+              <span class="price-name">Pedicura completa + esmaltado</span>
+              <span class="price-dots"></span>
+              <span class="price-value">Consultar</span>
+            </div>
+            <div class="price-row">
+              <span class="price-name">Semipermanente pies</span>
+              <span class="price-dots"></span>
+              <span class="price-value">Consultar</span>
+            </div>
+            <div class="price-row">
+              <span class="price-name">Spa exfoliante e hidratación</span>
+              <span class="price-dots"></span>
+              <span class="price-value">Consultar</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <p class="prices-note reveal">Los precios pueden variar. Contáctanos para más información.</p>
+      <div class="price-cta-box reveal">
+        <p class="prices-note">Los precios están sujetos a promociones del mes y servicios combinados. ¡Consulta la disponibilidad hoy!</p>
+        <a href="https://wa.me/584148804780?text=Hola,%20me%20gustaria%20consultar%20la%20lista%20de%20precios" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <i class="fab fa-whatsapp"></i> Preguntar Precios Actualizados
+        </a>
+      </div>
     </div>
   </section>
 
@@ -353,13 +551,18 @@
        ============================================ -->
   <section class="contact section" id="contacto">
     <div class="container">
-      <div class="reveal">
-        <h2>¿Lista para mimarte?</h2>
-        <p>Escríbenos por WhatsApp y agenda tu cita. Respondemos rápido 💜</p>
-        <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
-          <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
-        </a>
-        <p class="contact-phone">También puedes escribirnos directamente al +58 414-8804780</p>
+      <div class="contact-card reveal">
+        <div class="contact-icon-wrapper">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <h2>¿Lista para consentirte?</h2>
+        <p>Escríbenos por WhatsApp y reserva tu cita en minutos. ¡Te atenderemos con mucho gusto! 💜</p>
+        <div class="contact-actions">
+          <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+            <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+          </a>
+        </div>
+        <p class="contact-phone"><i class="fas fa-phone-alt"></i> O llámanos directamente al <strong>+58 414-8804780</strong></p>
       </div>
     </div>
   </section>
@@ -370,20 +573,39 @@
   <footer class="footer">
     <div class="container">
       <img src="./assets/logo-lavanda-transparente.png" alt="Lavanda Estudio" class="footer-logo" />
+      <p class="footer-tagline">Tu belleza, con el toque de Lavanda 🌸</p>
       <div class="social-links">
-        <a href="#" class="inactive" aria-label="Instagram" title="Próximamente">
+        <a href="#" class="inactive" aria-label="Instagram" title="Próximamente en Instagram">
           <i class="fab fa-instagram"></i>
         </a>
-        <a href="#" class="inactive" aria-label="TikTok" title="Próximamente">
+        <a href="#" class="inactive" aria-label="TikTok" title="Próximamente en TikTok">
           <i class="fab fa-tiktok"></i>
         </a>
-        <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="Contactar por WhatsApp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </div>
-      <p>&copy; 2025 Lavanda Estudio &middot; Todos los derechos reservados</p>
+      <p class="copyright">&copy; 2025 Lavanda Estudio &middot; Todos los derechos reservados</p>
     </div>
   </footer>
+
+  <!-- Floating Sticky WhatsApp Widget -->
+  <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Agendar Cita por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+    <span class="floating-tooltip">¡Agenda tu Cita! 💅</span>
+  </a>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
+      <img src="" alt="Vista previa de galería" id="lightboxImg" />
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+      <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm lightbox-btn">
+        <i class="fab fa-whatsapp"></i> Me interesa un diseño así
+      </a>
+    </div>
+  </div>
 
   <!-- Script -->
   <script src="./script.js"></script>
