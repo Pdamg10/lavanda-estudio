@@ -2,6 +2,95 @@
   'use strict';
 
   // ============================================
+  // TEMA OSCURO / MODAL VELVET TOGGLE
+  // ============================================
+  const themeToggle = document.getElementById('themeToggle');
+  const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    try {
+      localStorage.setItem('lavanda_theme', theme);
+    } catch (e) {}
+
+    // Actualizar íconos
+    const isDark = theme === 'dark';
+    if (themeToggle) {
+      themeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+      themeToggle.title = isDark ? 'Modo Claro' : 'Modo Velvet / Nocturno';
+    }
+    if (mobileThemeToggle) {
+      mobileThemeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i> Cambiar Modo Claro' : '<i class="fas fa-moon"></i> Cambiar Modo Nocturno';
+    }
+  }
+
+  function initTheme() {
+    let savedTheme = 'light';
+    try {
+      savedTheme = localStorage.getItem('lavanda_theme') || 'light';
+    } catch (e) {}
+    setTheme(savedTheme);
+  }
+
+  function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+  }
+
+  if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+  if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
+
+  initTheme();
+
+  // ============================================
+  // ESTADO DE NEGOCIO EN VIVO (ABIERTO / CERRADO)
+  // ============================================
+  function updateBusinessStatus() {
+    const statusText = document.getElementById('statusText');
+    const statusDot = document.querySelector('.status-dot');
+    if (!statusText || !statusDot) return;
+
+    const now = new Date();
+    const day = now.getDay(); // 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
+    const hour = now.getHours();
+
+    // Horario: Lunes (1) a Sábado (6) de 9:00 a 19:00
+    const isOpenDay = day >= 1 && day <= 6;
+    const isOpenHour = hour >= 9 && hour < 19;
+
+    if (isOpenDay && isOpenHour) {
+      statusDot.className = 'status-dot online';
+      statusText.textContent = 'Abierto Ahora (Cierra 7 PM)';
+    } else {
+      statusDot.className = 'status-dot offline';
+      statusText.textContent = 'Cerrado Ahora (Abre 9 AM)';
+    }
+  }
+
+  updateBusinessStatus();
+  setInterval(updateBusinessStatus, 60000); // Actualizar cada minuto
+
+  // ============================================
+  // PREGUNTAS FRECUENTES (FAQ ACCORDION)
+  // ============================================
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.parentElement;
+      const isActive = item.classList.contains('active');
+
+      // Cerrar los demás para mantener formato limpio
+      document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // ============================================
   // ESTADO Y PERSISTENCIA DEL CARRITO
   // ============================================
   let cart = [];
@@ -13,7 +102,6 @@
         cart = JSON.parse(savedCart);
       }
     } catch (e) {
-      console.error('Error al cargar el carrito de localStorage:', e);
       cart = [];
     }
   }
@@ -21,14 +109,10 @@
   function saveCart() {
     try {
       localStorage.setItem('lavanda_cart', JSON.stringify(cart));
-    } catch (e) {
-      console.error('Error al guardar el carrito:', e);
-    }
+    } catch (e) {}
   }
 
-  // ============================================
-  // COMPONENTES DEL CARRITO (DOM)
-  // ============================================
+  // DOM Elements Carrito
   const cartBtn = document.getElementById('cartBtn');
   const mobileCartBtn = document.getElementById('mobileCartBtn');
   const cartCount = document.getElementById('cartCount');
@@ -43,9 +127,6 @@
   const toast = document.getElementById('toast');
   const toastMessage = document.getElementById('toastMessage');
 
-  // ============================================
-  // FUNCIONES DE INTERFAZ DEL CARRITO
-  // ============================================
   function updateCartBadge() {
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     if (cartCount) cartCount.textContent = totalItems;
@@ -78,7 +159,6 @@
 
     let html = '';
     cart.forEach(item => {
-      const itemSubtotal = (item.price * item.quantity).toFixed(2);
       html += `
         <div class="cart-item-row" data-id="${item.id}">
           <img src="${item.img}" alt="${item.name}" class="cart-item-img" onerror="this.src='./assets/logo-lavanda-transparente.png';" />
@@ -132,9 +212,6 @@
     }, 2800);
   }
 
-  // ============================================
-  // OPERACIONES DEL CARRITO
-  // ============================================
   function addToCart(product) {
     const existingIndex = cart.findIndex(item => item.id === product.id);
     if (existingIndex > -1) {
@@ -178,7 +255,6 @@
     renderCart();
   }
 
-  // Event listener delegado para los botones dentro del carrito
   if (cartItemsContainer) {
     cartItemsContainer.addEventListener('click', (e) => {
       const decreaseBtn = e.target.closest('.decrease-btn');
@@ -195,7 +271,6 @@
     });
   }
 
-  // Event listener para botones "Agregar al Carrito"
   document.querySelectorAll('.product-add-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       const product = {
@@ -208,7 +283,6 @@
     });
   });
 
-  // Abrir / Cerrar Carrito
   if (cartBtn) cartBtn.addEventListener('click', openCart);
   if (mobileCartBtn) {
     mobileCartBtn.addEventListener('click', () => {
@@ -223,9 +297,6 @@
   if (cartOverlay) cartOverlay.addEventListener('click', closeCart);
   if (cartClear) cartClear.addEventListener('click', clearCart);
 
-  // ============================================
-  // CHECKOUT POR WHATSAPP
-  // ============================================
   if (cartCheckout) {
     cartCheckout.addEventListener('click', () => {
       if (cart.length === 0) return;
@@ -247,7 +318,6 @@
     });
   }
 
-  // Initialize Cart on Load
   loadCart();
   renderCart();
 
@@ -434,7 +504,7 @@
     });
   }
 
-  // Tecla Escape para cerrar modales y menú
+  // Tecla Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       if (mobileMenu && mobileMenu.classList.contains('open')) {

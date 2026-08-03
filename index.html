@@ -30,16 +30,31 @@
       <a href="#inicio" class="logo-link">
         <img src="./assets/logo-lavanda-transparente.png" alt="Lavanda Estudio" class="logo" />
       </a>
+
+      <!-- Status Badge en vivo -->
+      <div id="businessStatus" class="status-badge" title="Horario: Lun - Sáb: 9:00 AM - 7:00 PM">
+        <span class="status-dot"></span>
+        <span id="statusText">Verificando...</span>
+      </div>
+
       <div class="nav-links">
         <a href="#inicio" class="nav-link active">Inicio</a>
         <a href="#sobre" class="nav-link">Sobre Lavanda</a>
         <a href="#servicios" class="nav-link">Servicios</a>
         <a href="#productos" class="nav-link">Boutique</a>
+        <a href="#regalos" class="nav-link">Gift Cards</a>
         <a href="#galeria" class="nav-link">Galería</a>
         <a href="#precios" class="nav-link">Precios</a>
+        <a href="#faq" class="nav-link">FAQ</a>
         <a href="#contacto" class="nav-link">Contacto</a>
       </div>
+
       <div class="nav-actions-desktop">
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Cambiar tema de color" title="Modo Velvet / Nocturno">
+          <i class="fas fa-moon"></i>
+        </button>
+
         <button id="cartBtn" class="cart-trigger-btn" aria-label="Ver Carrito de Compras">
           <i class="fas fa-shopping-bag"></i>
           <span id="cartCount" class="cart-count-badge">0</span>
@@ -68,10 +83,15 @@
     <a href="#sobre" class="mobile-link">Sobre Lavanda</a>
     <a href="#servicios" class="mobile-link">Servicios</a>
     <a href="#productos" class="mobile-link">Boutique &amp; Productos</a>
+    <a href="#regalos" class="mobile-link">Gift Cards</a>
     <a href="#galeria" class="mobile-link">Galería</a>
     <a href="#precios" class="mobile-link">Precios</a>
+    <a href="#faq" class="mobile-link">Preguntas Frecuentes</a>
     <a href="#contacto" class="mobile-link">Contacto</a>
     <div class="mobile-menu-footer">
+      <button id="mobileThemeToggle" class="btn btn-secondary btn-full mb-2">
+        <i class="fas fa-moon"></i> Cambiar Modo Nocturno
+      </button>
       <button id="mobileCartBtn" class="btn btn-outline-primary btn-full mb-2">
         <i class="fas fa-shopping-bag"></i> Carrito (<span id="mobileCartCount">0</span>)
       </button>
@@ -471,6 +491,48 @@
     </div>
   </section>
 
+  <!-- ============================================
+       GIFT CARDS & TARJETAS DE REGALO
+       ============================================ -->
+  <section class="giftcards section" id="regalos">
+    <div class="container">
+      <div class="giftcards-card reveal">
+        <div class="giftcards-content">
+          <span class="section-subtitle">Detalles Especiales</span>
+          <h2>Regala un <span class="accent-text">Momento Lavanda</span> 🎁</h2>
+          <p>¿Buscas el regalo perfecto para un cumpleaños, aniversario o demostración de cariño? Regala una Tarjeta de Regalo personalizada para cualquier servicio o kit de productos boutique.</p>
+          
+          <div class="gift-packs">
+            <div class="gift-pack-pill"><i class="fas fa-check"></i> Pack Relax (Manicura + Pedicura Spa)</div>
+            <div class="gift-pack-pill"><i class="fas fa-check"></i> Pack Boutique Care (Servicio + Kit de Cuidado)</div>
+            <div class="gift-pack-pill"><i class="fas fa-check"></i> Monto Personalizado</div>
+          </div>
+
+          <a href="https://wa.me/584148804780?text=Hola!%20Me%20interesa%20comprar%20una%20Gift%20Card%20de%20Regalo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fab fa-whatsapp"></i> Encargar Gift Card Digital
+          </a>
+        </div>
+
+        <div class="giftcard-preview">
+          <div class="luxury-gift-card">
+            <div class="gift-card-logo">
+              <img src="./assets/logo-lavanda-transparente.png" alt="Lavanda Estudio" />
+            </div>
+            <div class="gift-card-body">
+              <span class="gift-tag">GIFT CARD / REGALO</span>
+              <h3>Momento Lavanda</h3>
+              <p>Válida para servicios o productos de boutique</p>
+            </div>
+            <div class="gift-card-footer">
+              <span>www.lavandaestudio.com</span>
+              <span class="gold-star"><i class="fas fa-star"></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Separador floral -->
   <div class="lavender-divider reveal">
     <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -755,6 +817,65 @@
         <a href="https://wa.me/584148804780?text=Hola,%20me%20gustaria%20consultar%20la%20lista%20de%20precios" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           <i class="fab fa-whatsapp"></i> Preguntar Precios Actualizados
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PREGUNTAS FRECUENTES (FAQ)
+       ============================================ -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle reveal">Aclara tus Dudas</span>
+        <h2 class="section-title reveal">Preguntas Frecuentes</h2>
+        <p class="section-desc reveal">Todo lo que necesitas saber antes de tu cita o pedido de boutique.</p>
+      </div>
+
+      <div class="faq-container reveal">
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Con cuánta anticipación debo reservar mi cita?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Recomendamos agendar tu cita con al menos 24 a 48 horas de anticipación para asegurar la fecha y hora de tu preferencia, especialmente en fines de semana.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Hacen envíos de los productos de la boutique?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>¡Sí! Puedes retirar tus productos directamente en nuestro estudio o solicitar envío a domicilio/nacional coordinándolo directamente por WhatsApp.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cuánto tiempo dura el esmaltado semipermanente?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Nuestros servicios de manicura semipermanente y nivelación con base rubber tienen una duración promedio de 2 a 3 semanas con el brillo y acabado intacto.</p>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cuáles son los métodos de pago aceptados?</span>
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Aceptamos Pago Móvil, Efectivo ($/Bs), Transferencias Bancarias y Zelle para tu mayor comodidad.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
