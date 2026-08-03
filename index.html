@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Lavanda Estudio - Especialistas en manicura y pedicura. Tu belleza, con el toque de Lavanda." />
-  <title>Lavanda Estudio | Manicura &amp; Pedicura</title>
+  <meta name="description" content="Lavanda Estudio - Especialistas en manicura, pedicura y boutique de belleza. Tu belleza, con el toque de Lavanda." />
+  <title>Lavanda Estudio | Manicura, Pedicura &amp; Boutique</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,11 +34,16 @@
         <a href="#inicio" class="nav-link active">Inicio</a>
         <a href="#sobre" class="nav-link">Sobre Lavanda</a>
         <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#productos" class="nav-link">Boutique</a>
         <a href="#galeria" class="nav-link">Galería</a>
         <a href="#precios" class="nav-link">Precios</a>
         <a href="#contacto" class="nav-link">Contacto</a>
       </div>
-      <div class="nav-cta-desktop">
+      <div class="nav-actions-desktop">
+        <button id="cartBtn" class="cart-trigger-btn" aria-label="Ver Carrito de Compras">
+          <i class="fas fa-shopping-bag"></i>
+          <span id="cartCount" class="cart-count-badge">0</span>
+        </button>
         <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="btn btn-nav">
           <i class="fab fa-whatsapp"></i> Reservar
         </a>
@@ -62,10 +67,14 @@
     <a href="#inicio" class="mobile-link">Inicio</a>
     <a href="#sobre" class="mobile-link">Sobre Lavanda</a>
     <a href="#servicios" class="mobile-link">Servicios</a>
+    <a href="#productos" class="mobile-link">Boutique &amp; Productos</a>
     <a href="#galeria" class="mobile-link">Galería</a>
     <a href="#precios" class="mobile-link">Precios</a>
     <a href="#contacto" class="mobile-link">Contacto</a>
     <div class="mobile-menu-footer">
+      <button id="mobileCartBtn" class="btn btn-outline-primary btn-full mb-2">
+        <i class="fas fa-shopping-bag"></i> Carrito (<span id="mobileCartCount">0</span>)
+      </button>
       <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full">
         <i class="fab fa-whatsapp"></i> Agendar por WhatsApp
       </a>
@@ -76,11 +85,9 @@
        HERO
        ============================================ -->
   <section class="hero" id="inicio">
-    <!-- Fondos de brillo ambiental -->
     <div class="hero-glow hero-glow-1"></div>
     <div class="hero-glow hero-glow-2"></div>
 
-    <!-- Patrón SVG decorativo -->
     <svg class="hero-pattern" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <defs>
         <pattern id="floralPattern" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
@@ -95,34 +102,33 @@
     <div class="container">
       <div class="reveal hero-card">
         <div class="hero-badge">
-          <i class="fas fa-sparkles"></i> Tu oasis de belleza y bienestar
+          <i class="fas fa-sparkles"></i> Tu oasis de belleza, cuidado y boutique personal
         </div>
         <img src="./assets/logo-lavanda-transparente.png" alt="Lavanda Estudio" class="hero-logo" />
         <h1>Tu belleza, con el <span class="accent-text">toque de Lavanda</span></h1>
-        <p>Especialistas en manicura y pedicura de alta calidad. Cuidamos cada detalle de tus manos y pies en un ambiente exclusivo.</p>
+        <p>Especialistas en manicura, pedicura y productos de belleza exclusivos. Disfruta de nuestros servicios en el estudio o llévate el cuidado profesional a tu casa.</p>
         
         <div class="hero-buttons">
           <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
             <i class="fab fa-whatsapp"></i> Reservar cita
           </a>
-          <a href="#servicios" class="btn btn-secondary">
-            Ver servicios <i class="fas fa-arrow-right"></i>
+          <a href="#productos" class="btn btn-secondary">
+            Ver Boutique <i class="fas fa-shopping-bag"></i>
           </a>
         </div>
 
-        <!-- Características destacadas (Trust Bar) -->
         <div class="hero-features">
           <div class="hero-feature-item">
             <i class="fas fa-check-circle"></i>
-            <span>Atención Personalizada</span>
+            <span>Servicios de Spa &amp; Estética</span>
           </div>
           <div class="hero-feature-item">
-            <i class="fas fa-heart"></i>
-            <span>Diseños Exclusivos</span>
+            <i class="fas fa-pump-soap"></i>
+            <span>Boutique de Cuidado Personal</span>
           </div>
           <div class="hero-feature-item">
             <i class="fas fa-gem"></i>
-            <span>Productos Premium</span>
+            <span>Productos 100% Garantizados</span>
           </div>
         </div>
       </div>
@@ -177,21 +183,21 @@
           <span class="gold-accent"></span>
           <h2>Sobre Lavanda</h2>
           <p class="lead-text">En Lavanda Estudio creemos que cuidarte es un acto de amor propio.</p>
-          <p>Nació de la pasión por la belleza, el detalle y el bienestar, con la visión de crear un espacio donde cada persona se sienta única, consentida y atendida con los estándares más altos de calidad e higiene.</p>
+          <p>Somos una alianza de dos apasionadas por la belleza y el cuidado personal. Unimos nuestros talentos para ofrecerte <strong>servicios profesionales de manicura y pedicura</strong> en nuestro estudio, junto a una <strong>boutique exclusiva de productos de belleza</strong> seleccionados para el mantenimiento diario de tu piel y uñas.</p>
 
           <div class="about-highlights">
             <div class="highlight-item">
-              <div class="highlight-icon"><i class="fas fa-pump-soap"></i></div>
+              <div class="highlight-icon"><i class="fas fa-hand-sparkles"></i></div>
               <div>
-                <h4>Higiene Garatizada</h4>
-                <p>Herramientas esterilizadas y protocolos bioseguros.</p>
+                <h4>Servicios Profesionales</h4>
+                <p>Atención minuciosa con altos estándares de higiene y diseño.</p>
               </div>
             </div>
             <div class="highlight-item">
-              <div class="highlight-icon"><i class="fas fa-paint-brush"></i></div>
+              <div class="highlight-icon"><i class="fas fa-shopping-bag"></i></div>
               <div>
-                <h4>Nail Art Personalizado</h4>
-                <p>Realizamos tus ideas con técnicas modernas y duraderas.</p>
+                <h4>Boutique &amp; Cuidado en Casa</h4>
+                <p>Productos de alta calidad recomendados para tu rutina diaria.</p>
               </div>
             </div>
           </div>
@@ -206,7 +212,7 @@
   <section class="services section" id="servicios">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-subtitle reveal">Lo que disfrutaste hoy</span>
+        <span class="section-subtitle reveal">Lo que disfrutas hoy</span>
         <h2 class="section-title reveal">Nuestros Servicios Principales</h2>
       </div>
 
@@ -252,6 +258,213 @@
             <a href="https://wa.me/584148804780?text=Hola,%20quisiera%20agendar%20un%20servicio%20de%20Pedicura" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
               <i class="fab fa-whatsapp"></i> Reservar Pedicura
             </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Separador floral -->
+  <div class="lavender-divider reveal">
+    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <g stroke="#9B59B6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5">
+        <path d="M32 52 L32 28" />
+        <path d="M32 40 L24 34" />
+        <path d="M32 36 L26 30" />
+        <path d="M32 32 L24 26" />
+        <path d="M32 42 L40 36" />
+        <path d="M32 38 L38 32" />
+        <path d="M32 34 L40 28" />
+        <ellipse cx="24" cy="34" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
+        <ellipse cx="26" cy="30" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
+        <ellipse cx="24" cy="26" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
+        <ellipse cx="40" cy="36" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
+        <ellipse cx="38" cy="32" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
+        <ellipse cx="40" cy="28" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
+        <ellipse cx="32" cy="24" rx="3.5" ry="6" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
+        <ellipse cx="28" cy="22" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
+        <ellipse cx="36" cy="22" rx="3" ry="5" fill="#D8B4F8" stroke="#9B59B6" stroke-width="1"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- ============================================
+       BOUTIQUE & PRODUCTOS
+       ============================================ -->
+  <section class="products section" id="productos">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-subtitle reveal">Para tu Cuidado en Casa</span>
+        <h2 class="section-title reveal">Boutique &amp; Productos Lavanda</h2>
+        <p class="section-desc reveal">Selección exclusiva de cosmética, hidratación y cuidado para llevar la experiencia del spa a tu rutina diaria.</p>
+      </div>
+
+      <!-- Filtros por categoría -->
+      <div class="category-tabs reveal">
+        <button class="category-tab active" data-category="all">Todos</button>
+        <button class="category-tab" data-category="cuticulas">Cuidado de Uñas</button>
+        <button class="category-tab" data-category="cremas">Aceites &amp; Cremas</button>
+        <button class="category-tab" data-category="kits">Kits &amp; Regalos</button>
+      </div>
+
+      <!-- Grid de Productos -->
+      <div class="products-grid">
+        <!-- Producto 1 -->
+        <div class="product-card reveal" data-category="cuticulas">
+          <div class="product-img-wrapper">
+            <span class="product-badge badge-popular">Más Vendido</span>
+            <img src="./assets/product-1.jpg" alt="Aceite Reparador de Cutículas" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="product-img-placeholder">
+              <i class="fas fa-pump-soap"></i>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Cuidado de Uñas</span>
+            <h3 class="product-title">Aceite Reparador de Cutículas Lavanda</h3>
+            <p class="product-desc">Fórmula nutricia con aceites esenciales de lavanda y vitamina E para hidratar y fortalecer.</p>
+            <div class="product-specs"><i class="fas fa-flask"></i> 30 ml</div>
+            <div class="product-footer">
+              <div class="product-price">$10.00</div>
+              <button class="btn btn-primary btn-sm product-add-btn" 
+                      data-id="prod-1" 
+                      data-name="Aceite Reparador de Cutículas Lavanda" 
+                      data-price="10.00" 
+                      data-img="./assets/product-1.jpg">
+                <i class="fas fa-cart-plus"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product-card reveal" data-category="cremas">
+          <div class="product-img-wrapper">
+            <span class="product-badge badge-new">Novedad</span>
+            <img src="./assets/product-2.jpg" alt="Crema Hidratante Spa Manos" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="product-img-placeholder">
+              <i class="fas fa-jar"></i>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Aceites &amp; Cremas</span>
+            <h3 class="product-title">Crema Hidratante Rejuvenecedora Spa</h3>
+            <p class="product-desc">Nutrición profunda para manos y codos con manteca de karité y fragancia suave a flor de lavanda.</p>
+            <div class="product-specs"><i class="fas fa-flask"></i> 100 ml</div>
+            <div class="product-footer">
+              <div class="product-price">$14.00</div>
+              <button class="btn btn-primary btn-sm product-add-btn" 
+                      data-id="prod-2" 
+                      data-name="Crema Hidratante Rejuvenecedora Spa" 
+                      data-price="14.00" 
+                      data-img="./assets/product-2.jpg">
+                <i class="fas fa-cart-plus"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product-card reveal" data-category="cuticulas">
+          <div class="product-img-wrapper">
+            <img src="./assets/product-3.jpg" alt="Serum Fortalecedor de Uñas" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="product-img-placeholder">
+              <i class="fas fa-vial"></i>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Cuidado de Uñas</span>
+            <h3 class="product-title">Serum Fortalecedor con Keratina &amp; Calcio</h3>
+            <p class="product-desc">Tratamiento intensivo para uñas quebradizas o escamadas. Resultados visibles en 7 días.</p>
+            <div class="product-specs"><i class="fas fa-flask"></i> 15 ml</div>
+            <div class="product-footer">
+              <div class="product-price">$12.00</div>
+              <button class="btn btn-primary btn-sm product-add-btn" 
+                      data-id="prod-3" 
+                      data-name="Serum Fortalecedor Keratina & Calcio" 
+                      data-price="12.00" 
+                      data-img="./assets/product-3.jpg">
+                <i class="fas fa-cart-plus"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product-card reveal" data-category="kits">
+          <div class="product-img-wrapper">
+            <span class="product-badge badge-offer">Especial</span>
+            <img src="./assets/product-4.jpg" alt="Kit Completo Spa Lavanda" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="product-img-placeholder">
+              <i class="fas fa-gift"></i>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Kits &amp; Regalos</span>
+            <h3 class="product-title">Kit Completo Spa "Momento Lavanda"</h3>
+            <p class="product-desc">Incluye Aceite de Cutículas + Crema de Manos + Lima de Cristal profesional + Neceser de regalo.</p>
+            <div class="product-specs"><i class="fas fa-box-open"></i> Set de 4 piezas</div>
+            <div class="product-footer">
+              <div class="product-price">$28.00</div>
+              <button class="btn btn-primary btn-sm product-add-btn" 
+                      data-id="prod-4" 
+                      data-name="Kit Completo Spa Momento Lavanda" 
+                      data-price="28.00" 
+                      data-img="./assets/product-4.jpg">
+                <i class="fas fa-cart-plus"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="product-card reveal" data-category="cremas">
+          <div class="product-img-wrapper">
+            <img src="./assets/product-5.jpg" alt="Exfoliante Corporal Lavanda" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="product-img-placeholder">
+              <i class="fas fa-mortar-pestle"></i>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Aceites &amp; Cremas</span>
+            <h3 class="product-title">Exfoliante Botánico de Sales &amp; Lavanda</h3>
+            <p class="product-desc">Renueva la piel de manos y pies eliminando células muertas mientras deja una suave capa sedosa.</p>
+            <div class="product-specs"><i class="fas fa-flask"></i> 150 g</div>
+            <div class="product-footer">
+              <div class="product-price">$16.00</div>
+              <button class="btn btn-primary btn-sm product-add-btn" 
+                      data-id="prod-5" 
+                      data-name="Exfoliante Botánico de Sales & Lavanda" 
+                      data-price="16.00" 
+                      data-img="./assets/product-5.jpg">
+                <i class="fas fa-cart-plus"></i> Agregar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="product-card reveal" data-category="kits">
+          <div class="product-img-wrapper">
+            <img src="./assets/product-6.jpg" alt="Lima de Cristal Profesional" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="product-img-placeholder">
+              <i class="fas fa-wand-sparkles"></i>
+            </div>
+          </div>
+          <div class="product-info">
+            <span class="product-cat">Kits &amp; Accesorios</span>
+            <h3 class="product-title">Lima Profesional de Cristal Templado</h3>
+            <p class="product-desc">Cierre suave de poros de la uña para evitar capas abiertas. Lavable y reutilizable sin desgaste.</p>
+            <div class="product-specs"><i class="fas fa-gem"></i> Cristal Templado</div>
+            <div class="product-footer">
+              <div class="product-price">$6.00</div>
+              <button class="btn btn-primary btn-sm product-add-btn" 
+                      data-id="prod-6" 
+                      data-name="Lima Profesional de Cristal Templado" 
+                      data-price="6.00" 
+                      data-img="./assets/product-6.jpg">
+                <i class="fas fa-cart-plus"></i> Agregar
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -556,7 +769,7 @@
           <i class="fab fa-whatsapp"></i>
         </div>
         <h2>¿Lista para consentirte?</h2>
-        <p>Escríbenos por WhatsApp y reserva tu cita en minutos. ¡Te atenderemos con mucho gusto! 💜</p>
+        <p>Escríbenos por WhatsApp para agendar tu servicio o coordinar la entrega de tus productos de boutique. ¡Te atenderemos con mucho gusto! 💜</p>
         <div class="contact-actions">
           <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
             <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
@@ -592,10 +805,10 @@
   <!-- Floating Sticky WhatsApp Widget -->
   <a href="https://wa.me/584148804780" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Agendar Cita por WhatsApp">
     <i class="fab fa-whatsapp"></i>
-    <span class="floating-tooltip">¡Agenda tu Cita! 💅</span>
+    <span class="floating-tooltip">¡Escríbenos por WhatsApp! 💜</span>
   </a>
 
-  <!-- Lightbox Modal -->
+  <!-- Lightbox Modal para Galería -->
   <div class="lightbox-modal" id="lightbox">
     <div class="lightbox-content">
       <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">&times;</button>
@@ -605,6 +818,40 @@
         <i class="fab fa-whatsapp"></i> Me interesa un diseño así
       </a>
     </div>
+  </div>
+
+  <!-- CART DRAWER MODAL (CARRITO DE COMPRAS INTERACTIVO) -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-header-title">
+        <i class="fas fa-shopping-bag"></i>
+        <h3>Tu Carrito de Boutique</h3>
+      </div>
+      <button class="cart-drawer-close" id="cartClose" aria-label="Cerrar Carrito">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartItemsContainer">
+      <!-- Los elementos del carrito se generan dinámicamente con JavaScript -->
+    </div>
+
+    <div class="cart-drawer-footer">
+      <div class="cart-total-row">
+        <span>Subtotal Estimado:</span>
+        <span id="cartTotal" class="cart-total-price">$0.00</span>
+      </div>
+      <p class="cart-footer-note"><i class="fas fa-truck"></i> Tu pedido será procesado y coordinado por WhatsApp.</p>
+      <button id="cartCheckout" class="btn btn-primary btn-full btn-checkout">
+        <i class="fab fa-whatsapp"></i> Confirmar Pedido por WhatsApp
+      </button>
+      <button id="cartClear" class="btn-clear-cart">Vaciar Carrito</button>
+    </div>
+  </aside>
+
+  <!-- Notification Toast -->
+  <div class="toast-notification" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMessage">Producto agregado al carrito</span>
   </div>
 
   <!-- Script -->
