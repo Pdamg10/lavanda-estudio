@@ -312,7 +312,7 @@
       text += 'Por favor indíquenme disponibilidad para coordinar la entrega. ¡Muchas gracias!';
 
       const encodedText = encodeURIComponent(text);
-      const whatsappUrl = `https://wa.me/584148804780?text=${encodedText}`;
+      const whatsappUrl = `https://wa.me/584269911560?text=${encodedText}`;
 
       window.open(whatsappUrl, '_blank');
     });
@@ -455,18 +455,26 @@
   });
 
   // ============================================
-  // LIGHTBOX MODAL DE GALERÍA
+  // LIGHTBOX MODAL DE GALERÍA & FILTROS
   // ============================================
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxCaption = document.getElementById('lightboxCaption');
   const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxBtn = lightbox ? lightbox.querySelector('.lightbox-btn') : null;
   const galleryItems = document.querySelectorAll('.gallery-item');
+  const galleryFilterBtns = document.querySelectorAll('.gallery-filter-btn');
 
   function openLightbox(src, title) {
     if (!lightbox || !lightboxImg) return;
     lightboxImg.src = src;
     lightboxCaption.textContent = title || 'Trabajo Lavanda Estudio';
+    
+    if (lightboxBtn) {
+      const queryText = encodeURIComponent(`Hola, estuve viendo la galería de Lavanda Estudio y me interesa agendar una cita para un diseño como: "${title || 'Trabajo de Uñas'}"`);
+      lightboxBtn.href = `https://wa.me/584269911560?text=${queryText}`;
+    }
+
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -475,6 +483,27 @@
     if (!lightbox) return;
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
+  }
+
+  // Filtrado dinámico de galería
+  if (galleryFilterBtns.length > 0) {
+    galleryFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        galleryFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter') || 'all';
+
+        galleryItems.forEach(item => {
+          if (!item.closest('.gallery-grid')) return;
+          const cat = item.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
   }
 
   galleryItems.forEach(item => {

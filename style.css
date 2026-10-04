@@ -1042,6 +1042,187 @@ ul {
   margin-top: auto;
 }
 
+/* Service Card Covers & Badges */
+.service-card-cover {
+  width: calc(100% + 4rem);
+  margin: -2.5rem -2rem 1.75rem -2rem;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid rgba(216, 180, 248, 0.3);
+}
+
+.service-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform var(--transition-slow);
+}
+
+.service-card:hover .service-card-cover img {
+  transform: scale(1.06);
+}
+
+.service-card-cover .cover-badge {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  background: rgba(30, 15, 45, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(216, 180, 248, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.service-card-cover .cover-badge i {
+  color: var(--dorado);
+}
+
+/* Vitrina de Técnicas de Uñas */
+.services-techniques-showcase {
+  margin-top: 3.5rem;
+  background: var(--blanco);
+  border-radius: var(--radius-lg);
+  padding: 2.75rem 2rem;
+  border: 1px solid rgba(216, 180, 248, 0.3);
+  box-shadow: var(--shadow-sm);
+}
+
+.showcase-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 2.25rem;
+}
+
+.showcase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--lavanda-principal);
+  background: rgba(155, 89, 182, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.75rem;
+}
+
+.showcase-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  color: var(--lavanda-oscuro);
+  margin-bottom: 0.5rem;
+}
+
+.showcase-header p {
+  color: var(--texto-mutado);
+  font-size: 0.95rem;
+}
+
+.techniques-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+
+.technique-card {
+  background: var(--crema);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(216, 180, 248, 0.25);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.technique-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--lavanda-principal);
+  box-shadow: var(--shadow-md);
+}
+
+.technique-thumb {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.technique-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  transition: transform var(--transition-slow);
+}
+
+.technique-card:hover .technique-thumb img {
+  transform: scale(1.08);
+}
+
+.technique-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(30, 15, 45, 0.85);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.technique-info {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.technique-info h4 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--lavanda-oscuro);
+  margin-bottom: 0.4rem;
+}
+
+.technique-info p {
+  font-size: 0.85rem;
+  color: var(--texto-mutado);
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+}
+
+.technique-link {
+  margin-top: auto;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--lavanda-principal);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--transition-fast);
+}
+
+.technique-card:hover .technique-link {
+  color: var(--lavanda-oscuro);
+}
+
 /* ============================================
    BOUTIQUE & PRODUCTOS
    ============================================ */
@@ -1756,6 +1937,44 @@ ul {
   background: var(--crema);
 }
 
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.75rem;
+}
+
+.gallery-filter-btn {
+  background: var(--blanco);
+  border: 1px solid rgba(155, 89, 182, 0.25);
+  color: var(--texto-oscuro);
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gallery-filter-btn:hover {
+  border-color: var(--lavanda-principal);
+  color: var(--lavanda-principal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(155, 89, 182, 0.15);
+}
+
+.gallery-filter-btn.active {
+  background: linear-gradient(135deg, var(--lavanda-principal) 0%, var(--lavanda-oscuro) 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 6px 16px rgba(155, 89, 182, 0.35);
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1766,16 +1985,29 @@ ul {
   position: relative;
   border-radius: var(--radius-md);
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
   background: var(--lavanda-claro);
+  border: 1px solid rgba(216, 180, 248, 0.25);
+  transition: transform var(--transition-slow), box-shadow var(--transition-base), opacity 0.3s ease;
+}
+
+.gallery-item.hidden {
+  display: none !important;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(155, 89, 182, 0.4);
 }
 
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 25%;
   transition: transform var(--transition-slow);
 }
 
@@ -1783,38 +2015,14 @@ ul {
   transform: scale(1.08);
 }
 
-.gallery-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: linear-gradient(135deg, var(--lavanda-claro) 0%, rgba(216, 180, 248, 0.4) 100%);
-  color: var(--lavanda-oscuro);
-  padding: 1rem;
-  border: 1px solid rgba(155, 89, 182, 0.2);
-}
-
-.gallery-placeholder .placeholder-icon {
-  font-size: 2rem;
-  color: var(--lavanda-principal);
-}
-
-.gallery-placeholder span {
-  font-family: var(--font-body);
-  font-size: 0.9375rem;
-  font-weight: 600;
-}
-
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(61, 36, 89, 0.85) 0%, rgba(61, 36, 89, 0.2) 100%);
+  background: linear-gradient(to top, rgba(30, 15, 45, 0.92) 0%, rgba(30, 15, 45, 0.3) 65%, transparent 100%);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  padding: 1.5rem 1rem;
   opacity: 0;
   transition: opacity var(--transition-base);
 }
@@ -1827,21 +2035,33 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  text-align: center;
+  gap: 0.35rem;
   color: #FFFFFF;
 }
 
 .overlay-info i {
-  font-size: 1.5rem;
-  background: rgba(255, 255, 255, 0.25);
-  padding: 0.875rem;
+  font-size: 1.25rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.65rem;
   border-radius: 50%;
   backdrop-filter: blur(4px);
+  margin-bottom: 0.25rem;
 }
 
-.overlay-info span {
-  font-size: 0.875rem;
+.overlay-info .overlay-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
   font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #FFFFFF;
+}
+
+.overlay-info .overlay-sub {
+  font-size: 0.75rem;
+  color: var(--lavanda-suave);
+  font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -1916,11 +2136,13 @@ ul {
 }
 
 .lightbox-content img {
-  max-height: 420px;
+  max-height: min(68vh, 620px);
   width: auto;
+  max-width: 100%;
   object-fit: contain;
   border-radius: var(--radius-md);
   margin-bottom: 1rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .lightbox-caption {

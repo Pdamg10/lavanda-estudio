@@ -72,7 +72,7 @@ lavanda-estudio/
 
 ## 📞 Contacto del negocio
 
-- 📱 **WhatsApp:** [+58 414-8804780](https://wa.me/584148804780)
+- 📱 **WhatsApp:** [+58 426-9911560](https://wa.me/584269911560)
 - 📸 **Instagram:** Próximamente
 - 🎵 **TikTok:** Próximamente
 
